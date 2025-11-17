@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Goal Setting – Modello +STIMA</title>
+  <title>Goal Setting – Modello +STIMA (Social & Relational Skills)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -12,7 +12,8 @@
       Goal Setting – Modello +STIMA
     </h1>
     <p class="text-center text-sm text-gray-700">
-      Compila i campi: il sistema genera automaticamente obiettivi in forma positiva secondo il modello +STIMA.
+      Strumento per la definizione di obiettivi educativi su competenze sociali e relazionali,
+      calibrati per ordine e grado scolastico, con obiettivi a breve, medio e lungo termine.
     </p>
 
     <!-- FORM DATI -->
@@ -34,70 +35,66 @@
           <input
             id="ordineNote"
             class="w-full p-2 rounded-xl border text-xs"
-            placeholder="Classe / sezione / note (es. 3ªA, piccolo gruppo...)"
+            placeholder="Classe / sezione / note (es. 3ªA, piccolo gruppo, laboratorio...)"
           />
         </div>
 
-        <!-- Materia -->
-        <input
-          id="materia"
-          class="w-full p-3 rounded-xl border"
-          placeholder="Materia / ambito (es. Italiano, Matematica, Comportamento...)"
-        />
-
-        <!-- Tipologia di bisogno -->
+        <!-- Tipologia di bisogno relazionale/sociale -->
         <div class="space-y-1">
-          <label class="text-sm font-medium">Tipologia di bisogno</label>
+          <label class="text-sm font-medium">Tipologia di bisogno relazionale/sociale</label>
           <select id="tipologiaBisogno" class="w-full p-3 rounded-xl border text-sm">
             <option value="">— Seleziona —</option>
-            <option value="lettura_scrittura">Lettura / scrittura</option>
-            <option value="matematica_calcolo">Matematica / calcolo</option>
-            <option value="attenzione_concentrazione">Attenzione / concentrazione</option>
-            <option value="comportamento_relazione">Comportamento / relazione</option>
-            <option value="comprensione_linguaggio">Comprensione / linguaggio</option>
-            <option value="organizzazione_metodo">Organizzazione / metodo di studio</option>
-            <option value="generico">Altro / generale</option>
+            <option value="turno_voce">Turno di parola e tono di voce</option>
+            <option value="rispetto_regole">Rispetto delle regole di convivenza</option>
+            <option value="cooperazione_gruppo">Cooperazione e lavori di gruppo</option>
+            <option value="gestione_conflitti">Gestione dei conflitti</option>
+            <option value="empatia_emozioni">Empatia e riconoscimento delle emozioni</option>
+            <option value="autocontrollo_frustrazione">Autocontrollo e tolleranza alla frustrazione</option>
+            <option value="spazio_personale">Rispetto dello spazio personale / contatto fisico</option>
+            <option value="altro">Altro bisogno relazionale</option>
           </select>
         </div>
 
         <!-- Punti di forza -->
         <div class="space-y-1">
-          <label class="text-sm font-medium">Punti di forza</label>
+          <label class="text-sm font-medium">Punti di forza relazionali</label>
           <select id="forzaSelect" class="w-full p-3 rounded-xl border text-sm">
             <option value="">— Seleziona un punto di forza —</option>
-            <option value="buona motivazione">Buona motivazione</option>
-            <option value="curiosità per l’apprendimento">Curiosità per l’apprendimento</option>
-            <option value="buone abilità sociali">Buone abilità sociali</option>
-            <option value="buona comprensione orale">Buona comprensione orale</option>
-            <option value="creatività">Creatività</option>
-            <option value="autonomia nelle routine">Autonomia nelle routine</option>
+            <option value="curiosità verso gli altri">Curiosità verso gli altri</option>
+            <option value="buon senso dell’umorismo">Buon senso dell’umorismo</option>
+            <option value="sensibilità e attenzione agli altri">Sensibilità e attenzione agli altri</option>
+            <option value="buona capacità di chiedere aiuto">Buona capacità di chiedere aiuto</option>
+            <option value="disponibilità a partecipare alle attività">Disponibilità a partecipare alle attività</option>
+            <option value="creatività nel gioco e nelle proposte">Creatività nel gioco e nelle proposte</option>
+            <option value="altro_forza">Altro...</option>
           </select>
           <textarea
             id="forzaExtra"
             class="w-full p-2 rounded-xl border text-xs min-h-[50px]"
-            placeholder="Altri punti di forza (opzionale)..."
+            placeholder="Altri punti di forza relazionali (opzionale)..."
           ></textarea>
         </div>
 
         <!-- Punti di debolezza -->
         <div class="space-y-1">
-          <label class="text-sm font-medium">Punti di debolezza / bisogni</label>
+          <label class="text-sm font-medium">Punti di debolezza / bisogni relazionali</label>
           <select id="debolezzaSelect" class="w-full p-3 rounded-xl border text-sm">
             <option value="">— Seleziona un bisogno prevalente —</option>
-            <option value="lettura_ad_alta_voce">Difficoltà nella lettura ad alta voce</option>
-            <option value="comprensione_testo">Difficoltà di comprensione del testo</option>
-            <option value="scrittura_ortografia">Difficoltà di scrittura / ortografia</option>
-            <option value="calcolo_tabelline">Difficoltà di calcolo / tabelline</option>
-            <option value="attenzione_fatica">Fatica a mantenere l’attenzione</option>
-            <option value="parla_troppo_forte">Tende a parlare a voce alta / interrompere</option>
-            <option value="relazioni_pari">Difficoltà nelle relazioni con i pari</option>
-            <option value="organizzazione_materiale">Difficoltà a organizzare materiale e compiti</option>
-            <option value="altro">Altro...</option>
+            <option value="parla_troppo_forte_interrompe">Parla a voce alta / interrompe spesso</option>
+            <option value="fatica_turno_parola">Fatica a rispettare il turno di parola</option>
+            <option value="fatica_regole_classe">Fatica a rispettare le regole condivise</option>
+            <option value="fatica_lavoro_gruppo">Fatichia nei lavori di gruppo</option>
+            <option value="litigi_frequenti">Litiga facilmente con i pari</option>
+            <option value="fatica_riconoscere_emozioni">Fatica a riconoscere/emergere emozioni proprie o altrui</option>
+            <option value="scatti_rabbia_frustrazione">Scatti di rabbia / bassa tolleranza alla frustrazione</option>
+            <option value="contatto_fisico_invasivo">Ricerca o usa un contatto fisico invasivo</option>
+            <option value="ritiro_sociale">Tendenza al ritiro / isolamento sociale</option>
+            <option value="altro_debolezza">Altro...</option>
           </select>
           <textarea
             id="debolezzaExtra"
             class="w-full p-2 rounded-xl border text-xs min-h-[50px]"
-            placeholder="Descrivi brevemente il bisogno (esempi concreti)..."
+            placeholder="Descrivi brevemente il bisogno (esempi concreti, situazioni tipiche)..."
           ></textarea>
         </div>
 
@@ -115,13 +112,27 @@
 
       <!-- OBIETTIVI GENERATI -->
       <div class="bg-white shadow rounded-2xl p-5">
-        <h2 class="text-xl font-semibold mb-3">Obiettivi suggeriti</h2>
+        <h2 class="text-xl font-semibold mb-3">Obiettivi suggeriti (social & relazionali)</h2>
         <div id="goalsContainer" class="space-y-4">
           <p class="text-gray-600" id="noGoalsMsg">
             Nessun obiettivo generato. Compila i campi e clicca “Genera obiettivi automatici”.
           </p>
         </div>
       </div>
+    </div>
+
+    <!-- LINEE GUIDA +STIMA -->
+    <div class="bg-white shadow rounded-2xl p-6">
+      <h2 class="text-2xl font-semibold mb-4">Linee guida del modello +STIMA</h2>
+      <ul class="list-disc pl-6 space-y-2 text-sm md:text-base">
+        <li><strong>Positività:</strong> descrivere cosa l’alunno è chiamato a fare (es. “parlare a bassa voce”).</li>
+        <li><strong>Intersoggettività:</strong> obiettivi condivisi tra docenti, famiglia e alunno.</li>
+        <li><strong>Univocità:</strong> un obiettivo per volta, chiaro e verificabile.</li>
+        <li><strong>Specificità:</strong> contesto, tempi, materiali, tipo di supporto esplicitati.</li>
+        <li><strong>Temporaneità:</strong> definire breve, medio e lungo termine.</li>
+        <li><strong>Misurabilità (I+1):</strong> indicatori osservabili, leggermente oltre il livello attuale.</li>
+        <li><strong>Attuabilità:</strong> obiettivi realistici in rapporto a risorse e fragilità.</li>
+      </ul>
     </div>
 
     <!-- ESPORTAZIONE -->
@@ -151,7 +162,6 @@
 
     const ordineSelect = document.getElementById("ordineSelect");
     const ordineNoteInput = document.getElementById("ordineNote");
-    const materiaInput = document.getElementById("materia");
     const tipologiaSelect = document.getElementById("tipologiaBisogno");
     const forzaSelect = document.getElementById("forzaSelect");
     const forzaExtraInput = document.getElementById("forzaExtra");
@@ -178,9 +188,7 @@
         card.className =
           "border rounded-xl p-4 bg-gray-50 text-sm md:text-base space-y-1";
         card.innerHTML =
-          "<p class='font-semibold'>Obiettivo " +
-          (index + 1) +
-          ": " +
+          "<p class='font-semibold'>" +
           g.titolo +
           "</p><p>" +
           g.descrizione +
@@ -189,12 +197,11 @@
       });
     }
 
-    function costruisciObiettivi(ordineCod, materia, tipologia, forza, debolezza) {
+    function costruisciObiettivi(ordineCod, tipologia, forza, debolezza) {
       const risultati = [];
-      const materiaLabel = materia || "l’ambito di lavoro";
-      var livello = "classe";
-      var setting = "in classe";
 
+      let livello = "classe";
+      let setting = "in classe";
       if (ordineCod === "infanzia") {
         livello = "sezione";
         setting = "nel piccolo gruppo in sezione";
@@ -203,140 +210,545 @@
         setting = "in classe durante le lezioni";
       } else if (ordineCod === "sec1" || ordineCod === "sec2") {
         livello = "classe";
-        setting = "durante le lezioni disciplinari";
-      }
-
-      const forzaShort = forza || "i punti di forza individuati";
-
-      function addGoal(titolo, descrizione) {
-        risultati.push({ titolo: titolo, descrizione: descrizione });
-      }
-
-      // Regole semplici per tipologia
-      if (tipologia === "lettura_scrittura") {
-        if (ordineCod === "infanzia") {
-          addGoal(
-            "Sviluppo delle competenze prelettura",
-            "Entro 6 settimane, " +
-              setting +
-              ", l’alunno parteciperà ad attività di ascolto, ripetizione e anticipazione di brevi storie o filastrocche, riproducendo correttamente almeno 4 enunciati su 5 in 4 situazioni su 5, valorizzando " +
-              forzaShort +
-              "."
-          );
-        } else {
-          addGoal(
-            "Miglioramento della lettura ad alta voce",
-            "Entro 6 settimane, durante le attività di " +
-              materiaLabel +
-              " " +
-              setting +
-              ", l’alunno leggerà ad alta voce brevi brani (3–5 righe) con non più di 3 errori di decodifica in almeno 4 occasioni su 5, valorizzando " +
-              forzaShort +
-              "."
-          );
-          addGoal(
-            "Accuratezza nella produzione scritta",
-            "Entro il termine del trimestre, nelle attività di " +
-              materiaLabel +
-              " " +
-              setting +
-              ", l’alunno produrrà testi brevi (5–8 frasi) con massimo 3 errori ortografici per testo in almeno 3 prove su 4, utilizzando schemi guida e rilettura ad alta voce."
-          );
-        }
-      } else if (tipologia === "matematica_calcolo") {
-        if (ordineCod === "infanzia") {
-          addGoal(
-            "Sviluppo dei prerequisiti logico-matematici",
-            "Entro 8 settimane, " +
-              setting +
-              ", l’alunno riconoscerà e conterà correttamente insiemi di oggetti fino a 5/10 elementi in almeno 4 situazioni su 5, attraverso giochi di conteggio e materiali concreti."
-          );
-        } else {
-          addGoal(
-            "Automatizzazione del calcolo di base",
-            "Entro 8 settimane, durante le lezioni di " +
-              materiaLabel +
-              " in " +
-              livello +
-              ", l’alunno risolverà correttamente almeno 8 operazioni su 10 del tipo indicato (es. addizioni e sottrazioni entro il 100) in 4 verifiche consecutive, con schede strutturate e tempo aggiuntivo se necessario."
-          );
-        }
-      } else if (tipologia === "attenzione_concentrazione") {
-        if (ordineCod === "infanzia") {
-          addGoal(
-            "Mantenimento dell’attenzione nelle routine",
-            "Entro 6 settimane, durante circle time e attività guidate " +
-              setting +
-              ", l’alunno rimarrà seduto e partecipe per almeno 5–7 minuti consecutivi, con al massimo un richiamo leggero dell’adulto, in 4 routine su 5, supportato da agenda visiva e segnali condivisi."
-          );
-        } else {
-          addGoal(
-            "Mantenimento dell’attenzione sul compito",
-            "Entro 6 settimane, " +
-              setting +
-              ", l’alunno manterrà l’attenzione sul compito per almeno 10 minuti consecutivi, con al massimo un richiamo leggero dell’adulto, in 4 lezioni su 5, utilizzando timer visivi e indicazioni passo-passo."
-          );
-        }
-      } else if (tipologia === "comportamento_relazione") {
-        if (ordineCod === "infanzia") {
-          addGoal(
-            "Regolazione del comportamento nel gruppo",
-            "Entro 8 settimane, durante i momenti di gioco strutturato e circle time " +
-              setting +
-              ", l’alunno rispetterà i turni di parola, utilizzerà un tono di voce adeguato e condividerà almeno un gioco o materiale con i pari in 4 attività su 5, con il supporto di regole visive e rinforzi positivi."
-          );
-        } else {
-          addGoal(
-            "Regolazione del comportamento in gruppo",
-            "Entro 8 settimane, durante i lavori di gruppo in " +
-              livello +
-              ", l’alunno interverrà rispettando il turno di parola e mantenendo un tono di voce adeguato in almeno 4 attività su 5, con regole condivise e rinforzi positivi concordati nel team educativo."
-          );
-        }
-      } else if (tipologia === "comprensione_linguaggio") {
-        if (ordineCod === "infanzia") {
-          addGoal(
-            "Comprensione di storie e istruzioni semplici",
-            "Entro il termine del trimestre, durante la lettura o narrazione di brevi storie " +
-              setting +
-              ", l’alunno risponderà correttamente ad almeno 3 domande su 4 (chi? cosa fa? dove?) in 4 situazioni su 5, con supporto di immagini o oggetti."
-          );
-        } else {
-          addGoal(
-            "Comprensione del testo scritto",
-            "Entro il termine del quadrimestre, in " +
-              materiaLabel +
-              ", l’alunno risponderà correttamente ad almeno 4 domande su 5 relative a un breve testo narrativo o informativo, con o senza audio-lettura, utilizzando mappe o immagini di supporto."
-          );
-        }
-      } else if (tipologia === "organizzazione_metodo") {
-        if (ordineCod === "infanzia") {
-          addGoal(
-            "Organizzazione nelle routine di sezione",
-            "Entro 6 settimane, all’inizio e alla fine delle attività " +
-              setting +
-              ", l’alunno riporrà il proprio materiale (grembiule, zainetto, giochi) nel posto assegnato in almeno 4 giorni su 5, con etichette visive e modellamento adulto."
-          );
-        } else {
-          addGoal(
-            "Organizzazione del materiale e del lavoro",
-            "Entro 6 settimane, all’inizio delle lezioni in " +
-              livello +
-              ", l’alunno preparerà autonomamente il materiale necessario (quaderni, libro, astuccio) e compilerà una breve lista di cose da fare in almeno 4 giorni su 5, utilizzando una check-list visiva."
-          );
-        }
+        setting = "durante le lezioni e i lavori di gruppo";
       } else {
-        // obiettivo generico se non è stata selezionata una tipologia chiara
-        addGoal(
-          "Obiettivo di autonomia progressiva",
-          "Entro 6–8 settimane, nelle attività di " +
-            materiaLabel +
-            " in " +
-            livello +
-            ", l’alunno porterà a termine il compito assegnato con massimo un supporto individualizzato dell’adulto, in almeno 3 situazioni su 4, valorizzando " +
-            forzaShort +
-            " e utilizzando strategie condivise (scomposizione in passi, agenda visiva, tempi di pausa concordati)."
-        );
+        livello = "gruppo";
+        setting = "nel contesto educativo di riferimento";
+      }
+
+      const forzaShort = forza || "i punti di forza relazionali individuati";
+
+      function addGoal(livelloTermine, titoloBase, descrizione) {
+        risultati.push({
+          titolo: "Obiettivo a " + livelloTermine + " termine – " + titoloBase,
+          descrizione: descrizione
+        });
+      }
+
+      // TURNI DI PAROLA / TONO DI VOCE
+      if (tipologia === "turno_voce") {
+        if (ordineCod === "infanzia") {
+          addGoal(
+            "breve",
+            "uso del turno di parola nel circle time",
+            "Entro 2–3 settimane, " +
+              setting +
+              ", durante il circle time l’alunno aspetterà il proprio turno di parola in almeno 2 attività su 3, sostenuto da segnali visivi (es. oggetto della parola) e rinforzi positivi, valorizzando " +
+              forzaShort +
+              "."
+          );
+          addGoal(
+            "medio",
+            "regolazione del tono di voce nei giochi di gruppo",
+            "Entro 6 settimane, " +
+              setting +
+              ", durante i giochi di gruppo l’alunno utilizzerà un tono di voce moderato (non urlato) in almeno 4 momenti di gioco su 5, con richiami visivi (icone voce bassa/alta) e modellamento dell’adulto."
+          );
+          addGoal(
+            "lungo",
+            "uso stabile di turno e tono adeguato nelle routine di sezione",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", durante le principali routine (circle time, gioco strutturato, riordino) l’alunno rispetterà il turno di parola e manterrà un tono di voce adeguato in almeno 4 giorni su 5, con minimi richiami verbali."
+          );
+        } else if (ordineCod === "primaria") {
+          addGoal(
+            "breve",
+            "gestione del turno di parola nelle discussioni guidate",
+            "Entro 3 settimane, " +
+              setting +
+              ", durante le discussioni guidate l’alunno alzerà la mano prima di parlare in almeno 3 lezioni su 5, riducendo le interruzioni spontanee."
+          );
+          addGoal(
+            "medio",
+            "tono di voce adeguato nei lavori di gruppo",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", nei lavori di gruppo l’alunno interverrà mantenendo un tono di voce adeguato non disturbante in almeno 4 attività su 5, con rinforzi positivi da parte del docente."
+          );
+          addGoal(
+            "lungo",
+            "stabilità della comunicazione rispettosa nel gruppo classe",
+            "Entro il termine del quadrimestre, " +
+              setting +
+              ", l’alunno interverrà rispettando il turno di parola e il tono di voce adeguato in almeno 4 lezioni su 5, con riduzione significativa dei richiami per interruzioni o voce troppo alta."
+          );
+        } else {
+          addGoal(
+            "breve",
+            "riduzione delle interruzioni durante le lezioni",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno ridurrà le interruzioni spontanee (parlare sopra gli altri) a non più di 2 episodi per lezione in almeno 3 lezioni su 5, accettando i richiami dell’adulto."
+          );
+          addGoal(
+            "medio",
+            "uso di forme comunicative regolato nei lavori di gruppo",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", nei lavori di gruppo l’alunno utilizzerà forme comunicative rispettose (non sovrapporsi, non alzare la voce, ascoltare il compagno) in almeno 4 attività su 5."
+          );
+          addGoal(
+            "lungo",
+            "comunicazione assertiva e rispettosa nel gruppo classe",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno manterrà uno stile comunicativo assertivo e rispettoso (rispetto dei turni, tono adeguato, assenza di commenti svalutanti) in almeno 4 giornate su 5, come rilevato da osservazioni sistematiche del team docente."
+          );
+        }
+      }
+
+      // RISPETTO REGOLE
+      if (tipologia === "rispetto_regole") {
+        if (ordineCod === "infanzia") {
+          addGoal(
+            "breve",
+            "adesione alle regole nelle routine principali",
+            "Entro 2–3 settimane, " +
+              setting +
+              ", l’alunno seguirà le indicazioni dell’adulto in almeno due routine al giorno (es. ingresso, riordino), con supporto di immagini e canzoni-routine."
+          );
+          addGoal(
+            "medio",
+            "rispetto costante di 2–3 regole chiave di sezione",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno rispetterà in almeno 4 giorni su 5 tre regole chiave concordate (es. non spingere, riordinare il materiale, aspettare il turno)."
+          );
+          addGoal(
+            "lungo",
+            "partecipazione attiva alla costruzione e rispetto delle regole",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno parteciperà alla riformulazione delle regole di sezione e le rispetterà in modo stabile in almeno 4 giorni su 5, con riduzione significativa dei comportamenti di rottura."
+          );
+        } else if (ordineCod === "primaria") {
+          addGoal(
+            "breve",
+            "riduzione dei richiami per comportamento in classe",
+            "Entro 3 settimane, " +
+              setting +
+              ", il numero di richiami verbali per mancato rispetto delle regole di classe si ridurrà del 30–40% rispetto alla media iniziale, come osservato dal docente."
+          );
+          addGoal(
+            "medio",
+            "adesione alle regole di convivenza in almeno 4 lezioni su 5",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno rispetterà le principali regole di convivenza scolastica (es. non alzarsi senza motivo, non disturbare i compagni) in almeno 4 lezioni su 5."
+          );
+          addGoal(
+            "lungo",
+            "interiorizzazione delle regole e ruolo attivo nel gruppo",
+            "Entro il termine del quadrimestre, " +
+              setting +
+              ", l’alunno manterrà nel tempo il rispetto delle regole di classe e, in almeno 3 situazioni, richiamerà in modo positivo i compagni alle regole condivise, contribuendo al clima di gruppo."
+          );
+        } else {
+          addGoal(
+            "breve",
+            "consapevolezza delle regole di istituto/classe",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno sarà in grado di elencare le principali regole di comportamento attese e di riconoscere quali suoi comportamenti possono essere problematici, in almeno 2 colloqui guidati su 2."
+          );
+          addGoal(
+            "medio",
+            "adesione pratica alle regole di comportamento",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno ridurrà in modo significativo gli episodi di inosservanza delle regole (note, richiami formali) e rispetterà i patti educativi in almeno 4 giorni su 5."
+          );
+          addGoal(
+            "lungo",
+            "mantenimento nel tempo del comportamento adeguato",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno manterrà un comportamento coerente con il regolamento in modo continuativo per almeno 6–8 settimane consecutive, come rilevato dal team docente."
+          );
+        }
+      }
+
+      // COOPERAZIONE E LAVORO DI GRUPPO
+      if (tipologia === "cooperazione_gruppo") {
+        if (ordineCod === "infanzia") {
+          addGoal(
+            "breve",
+            "partecipazione a giochi cooperativi brevi",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno parteciperà ad almeno un gioco cooperativo breve al giorno accettando la presenza dei pari e rimanendo nel gruppo fino alla fine del gioco in almeno 3 giorni su 5."
+          );
+          addGoal(
+            "medio",
+            "condivisione di materiali e turni nel gioco",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno condividerà i materiali di gioco e rispetterà il turno d’uso in almeno 4 attività di gioco strutturato su 5."
+          );
+          addGoal(
+            "lungo",
+            "stabilità della partecipazione cooperativa nel gruppo sezione",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno parteciperà con continuità alle attività di piccolo gruppo, portando a termine il gioco cooperativo senza abbandoni improvvisi in almeno 4 giorni su 5."
+          );
+        } else if (ordineCod === "primaria") {
+          addGoal(
+            "breve",
+            "accettazione del lavoro in piccolo gruppo",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno accetterà di lavorare in piccolo gruppo con compagni assegnati in almeno 3 attività su 4, senza rifiuto aperto o abbandono del gruppo."
+          );
+          addGoal(
+            "medio",
+            "svolgimento del ruolo concordato nel gruppo",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno svolgerà il ruolo concordato (es. lettore, portavoce, gestore del materiale) portando a termine il compito assegnato in almeno 4 lavori di gruppo su 5."
+          );
+          addGoal(
+            "lungo",
+            "collaborazione stabile e costruttiva nel gruppo classe",
+            "Entro il termine del quadrimestre, " +
+              setting +
+              ", l’alunno collaborerà in modo costruttivo mostrando ascolto attivo, rispetto dei turni e contributi pertinenti in almeno 4 esperienze di gruppo su 5."
+          );
+        } else {
+          addGoal(
+            "breve",
+            "partecipazione non oppositiva al lavoro di gruppo",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno parteciperà ai lavori di gruppo senza rifiutare o ostacolare l’attività in almeno 3 situazioni su 4."
+          );
+          addGoal(
+            "medio",
+            "contributo attivo e rispettoso nel gruppo",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno offrirà almeno un contributo pertinente per attività di gruppo (idea, proposta, sintesi) in almeno 4 lavori di gruppo su 5, mantenendo un atteggiamento rispettoso verso i pari."
+          );
+          addGoal(
+            "lungo",
+            "sviluppo di competenze cooperative avanzate",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno dimostrerà capacità di negoziazione, compromesso e gestione di ruoli diversi nel gruppo in almeno 3 progetti cooperativi significativi."
+          );
+        }
+      }
+
+      // GESTIONE CONFLITTI
+      if (tipologia === "gestione_conflitti") {
+        if (ordineCod === "infanzia") {
+          addGoal(
+            "breve",
+            "riduzione di comportamenti impulsivi nel conflitto",
+            "Entro 3 settimane, " +
+              setting +
+              ", in situazioni di conflitto l’alunno ridurrà comportamenti fisici impulsivi (spingere, prendere a forza) ad al massimo 1 episodio al giorno, chiedendo più spesso l’aiuto dell’adulto."
+          );
+          addGoal(
+            "medio",
+            "uso guidato di parole invece di agiti",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno utilizzerà, in almeno 4 episodi di conflitto su 5, espressioni verbali semplici (es. “non mi piace”, “è il mio turno”) invece di passare subito all’azione fisica, con supporto dell’adulto."
+          );
+          addGoal(
+            "lungo",
+            "uso stabile di strategie di gestione del conflitto",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno sceglierà e utilizzerà una strategia tra quelle discusse (chiedere aiuto, allontanarsi, usare parole) in almeno 4 situazioni di conflitto su 5."
+          );
+        } else if (ordineCod === "primaria") {
+          addGoal(
+            "breve",
+            "riconoscimento dei segnali di conflitto",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno identificherà, in almeno 2 attività guidate su 2, le situazioni tipiche di conflitto in classe e i propri comportamenti abituali, con l’aiuto del docente."
+          );
+          addGoal(
+            "medio",
+            "uso di strategie verbali di base nei conflitti",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", in caso di conflitto con i pari l’alunno utilizzerà almeno una strategia verbale adeguata (es. “non mi va bene”, “possiamo trovare un accordo?”) in almeno 4 episodi su 5."
+          );
+          addGoal(
+            "lungo",
+            "gestione sempre più autonoma dei conflitti",
+            "Entro il termine del quadrimestre, " +
+              setting +
+              ", l’alunno affronterà i conflitti utilizzando strategie apprese (dialogo, mediazione, richiesta di intervento adulto) con riduzione significativa di episodi aggressivi o oppositivi."
+          );
+        } else {
+          addGoal(
+            "breve",
+            "consapevolezza dei propri stili di gestione del conflitto",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno descriverà in almeno 2 colloqui guidati i propri comportamenti tipici in situazioni di conflitto e gli effetti sugli altri."
+          );
+          addGoal(
+            "medio",
+            "adozione di strategie più funzionali nel conflitto",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", in situazioni di disaccordo l’alunno utilizzerà almeno una strategia funzionale (es. chiedere chiarimenti, rimandare la discussione, coinvolgere un adulto) in almeno 4 episodi su 5."
+          );
+          addGoal(
+            "lungo",
+            "gestione regolata del disaccordo in contesti complessi",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno manterrà un comportamento regolato anche in conflitti più complessi (es. con più compagni o con adulti), evitando escalation verbali o fisiche in almeno 4 situazioni su 5."
+          );
+        }
+      }
+
+      // EMPATIA ED EMOZIONI
+      if (tipologia === "empatia_emozioni") {
+        if (ordineCod === "infanzia") {
+          addGoal(
+            "breve",
+            "riconoscimento di 2 emozioni di base",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno riconoscerà e nominerà correttamente almeno 2 emozioni di base (gioia, tristezza) in sé o nei personaggi delle storie in almeno 3 attività su 4."
+          );
+          addGoal(
+            "medio",
+            "ampliamento a 4 emozioni di base",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno riconoscerà e nominerà almeno 4 emozioni di base (gioia, tristezza, rabbia, paura) in sé e negli altri in almeno 4 attività su 5."
+          );
+          addGoal(
+            "lungo",
+            "iniziale collegamento emozione–comportamento",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno collegherà in modo semplice le emozioni ai comportamenti (es. “sono arrabbiato quindi urlo/spingo”) in almeno 3 momenti di riflessione guidata su 4."
+          );
+        } else if (ordineCod === "primaria") {
+          addGoal(
+            "breve",
+            "descrizione delle emozioni in situazioni scolastiche",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno descriverà con parole semplici come si sente in almeno 3 situazioni scolastiche (errore, gioco, rimprovero) in due attività guidate."
+          );
+          addGoal(
+            "medio",
+            "individuazione di strategie semplici di gestione delle emozioni",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno proporrà almeno una strategia adeguata per gestire le proprie emozioni in 4 discussioni guidate su 5 (es. pausa, parlare con l’adulto, respirare)."
+          );
+          addGoal(
+            "lungo",
+            "empatia di base verso le emozioni dei pari",
+            "Entro il termine del quadrimestre, " +
+              setting +
+              ", l’alunno riconoscerà le emozioni principali in almeno 3 situazioni che riguardano i pari e commenterà con una frase empatica adeguata in 3 casi su 4."
+          );
+        } else {
+          addGoal(
+            "breve",
+            "consapevolezza del proprio stato emotivo",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno individuerà e descriverà le proprie emozioni prevalenti in almeno 3 situazioni scolastiche significative (valutazioni, conflitti, presentazioni) in due colloqui guidati."
+          );
+          addGoal(
+            "medio",
+            "scelta di strategie di coping adeguate",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno individuerà e metterà in atto almeno una strategia funzionale di gestione emotiva in 4 situazioni su 5 (es. chiedere supporto, pianificare, usare tecniche di respirazione)."
+          );
+          addGoal(
+            "lungo",
+            "sviluppo di una postura empatica nelle relazioni",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno dimostrerà capacità di accogliere e rispettare le emozioni altrui in almeno 4 contesti relazionali significativi (lavori di gruppo, restituzioni, feedback) su 5."
+          );
+        }
+      }
+
+      // AUTOCONTROLLO / FRUSTRAZIONE
+      if (tipologia === "autocontrollo_frustrazione") {
+        if (ordineCod === "infanzia") {
+          addGoal(
+            "breve",
+            "riduzione minima degli scatti di rabbia",
+            "Entro 3 settimane, " +
+              setting +
+              ", gli scatti di rabbia visibili (pianti intensi, urla, lanci di oggetti) si ridurranno ad almeno 1–2 episodi al giorno, grazie a interventi di contenimento e rassicurazione."
+          );
+          addGoal(
+            "medio",
+            "uso guidato di una strategia calmante",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", in situazioni di frustrazione l’alunno utilizzerà almeno una strategia calmante condivisa (prendere un oggetto calmante, sedersi nell’angolo tranquillo) in almeno 4 episodi su 5."
+          );
+          addGoal(
+            "lungo",
+            "iniziale autoregolazione nelle routine più difficili",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno gestirà in modo più regolato le routine per lui più critiche (es. passaggi, attese) mettendo in atto strategie concordate, con scatti di rabbia solo occasionali (massimo 1–2 a settimana)."
+          );
+        } else if (ordineCod === "primaria") {
+          addGoal(
+            "breve",
+            "consapevolezza di alcuni segnali di frustrazione",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno individuerà almeno 2 segnali corporei o comportamentali che indicano che sta per arrabbiarsi (es. stringere i pugni, alzare la voce) in una attività di riflessione guidata."
+          );
+          addGoal(
+            "medio",
+            "uso di strategie concordate invece dell’esplosione",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", in situazioni di frustrazione l’alunno utilizzerà una delle strategie concordate (pausa breve, chiedere aiuto, cambiare posto) in almeno 4 episodi su 5, riducendo comportamenti esplosivi."
+          );
+          addGoal(
+            "lungo",
+            "gestione più autonoma dei momenti critici",
+            "Entro il termine del quadrimestre, " +
+              setting +
+              ", l’alunno affronterà i momenti critici (errore, rimprovero, compito difficile) senza abbandonare il compito o mettere in atto comportamenti oppositivi in almeno 4 situazioni su 5."
+          );
+        } else {
+          addGoal(
+            "breve",
+            "riconoscimento dei trigger di frustrazione",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno individuerà e descriverà almeno 3 situazioni/trigger che scatenano più facilmente rabbia o frustrazione in due colloqui guidati."
+          );
+          addGoal(
+            "medio",
+            "riduzione di comportamenti esplosivi",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno ridurrà sensibilmente episodi di esplosione (urla, insulti, uscite dall’aula) utilizzando strategie di coping concordate in almeno 4 situazioni su 5."
+          );
+          addGoal(
+            "lungo",
+            "stabilità dell’autocontrollo in situazioni stressanti",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno manterrà un comportamento regolato anche durante verifiche, restituzioni e conflitti, con episodi esplosivi solo occasionali (massimo 1–2 al mese)."
+          );
+        }
+      }
+
+      // SPAZIO PERSONALE / CONTATTO FISICO
+      if (tipologia === "spazio_personale") {
+        if (ordineCod === "infanzia") {
+          addGoal(
+            "breve",
+            "presa di consapevolezza dello spazio personale",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno riconoscerà, durante attività guidate, cosa significa stare ‘troppo vicino’ o ‘alla giusta distanza’ in almeno 2 giochi/role-playing su 2."
+          );
+          addGoal(
+            "medio",
+            "riduzione di contatti fisici invasivi nel gioco",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno ridurrà comportamenti di contatto fisico invasivo (spingere, abbracciare all’improvviso) ad al massimo 1 episodio al giorno, sostituendoli con richieste verbali di gioco."
+          );
+          addGoal(
+            "lungo",
+            "rispetto stabile dello spazio personale dei pari",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno manterrà una distanza personale adeguata e userà forme di contatto fisico adeguate in almeno 4 giorni su 5."
+          );
+        } else {
+          addGoal(
+            "breve",
+            "consapevolezza dei confini del corpo proprio/altrui",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno discuterà e riconoscerà, in almeno 2 attività guidate, il significato di spazio personale e contatto fisico appropriato."
+          );
+          addGoal(
+            "medio",
+            "riduzione dei comportamenti fisici inappropriati",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno ridurrà sensibilmente comportamenti di contatto non richiesto (spinte, toccare oggetti/persona) in almeno 4 giorni su 5."
+          );
+          addGoal(
+            "lungo",
+            "rispetto stabile dei confini fisici nelle relazioni",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno manterrà un comportamento rispettoso dei confini fisici propri e altrui in modo stabile, come rilevato dal team docente e dagli episodi segnalati."
+          );
+        }
+      }
+
+      // ALTRO / GENERICO RELAZIONALE
+      if (tipologia === "altro" || risultati.length === 0) {
+        if (ordineCod === "infanzia") {
+          addGoal(
+            "breve",
+            "aumento delle interazioni positive nel gioco",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno cercherà almeno una interazione positiva al giorno con un pari (es. offrire un gioco, rivolgere la parola) in almeno 3 giorni su 5."
+          );
+          addGoal(
+            "medio",
+            "partecipazione più stabile alle attività di gruppo",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno parteciperà alle attività di gruppo (giochi, circle time, laboratori) per tutta la durata prevista in almeno 4 giorni su 5."
+          );
+          addGoal(
+            "lungo",
+            "costruzione di legami positivi e stabili nel gruppo sezione",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno mostrerà legami positivi e ricorrenti con almeno un piccolo gruppo di pari (partecipazione al gioco, richieste di stare insieme) in almeno 4 giorni su 5."
+          );
+        } else {
+          addGoal(
+            "breve",
+            "incremento dei comportamenti sociali di base",
+            "Entro 3 settimane, " +
+              setting +
+              ", l’alunno metterà in atto almeno un comportamento sociale di base al giorno (salutare, chiedere aiuto, ringraziare) in almeno 4 giorni su 5."
+          );
+          addGoal(
+            "medio",
+            "partecipazione attiva e rispettosa alla vita di classe",
+            "Entro 6–8 settimane, " +
+              setting +
+              ", l’alunno parteciperà alle dinamiche di classe (discussioni, lavori di gruppo) in modo più attivo e rispettoso in almeno 4 giorni su 5."
+          );
+          addGoal(
+            "lungo",
+            "consolidamento delle competenze relazionali di base",
+            "Entro il termine del trimestre, " +
+              setting +
+              ", l’alunno manterrà in modo stabile comportamenti relazionali adeguati (saluto, ascolto, richiesta di aiuto, rispetto dei pari) in almeno 6–8 settimane consecutive."
+          );
+        }
       }
 
       return risultati;
@@ -345,23 +757,20 @@
     generateGoalsBtn.addEventListener("click", function() {
       const ordineCod = ordineSelect.value;
       const ordineNote = ordineNoteInput.value.trim();
-      const materia = materiaInput.value.trim();
       const tipologia = tipologiaSelect.value;
 
-      var forza = "";
+      let forza = "";
       if (forzaSelect.value) {
-        const fOpt = forzaSelect.options[forzaSelect.selectedIndex].text;
-        forza = fOpt;
+        forza = forzaSelect.options[forzaSelect.selectedIndex].text;
       }
       const forzaExtra = forzaExtraInput.value.trim();
       if (forzaExtra) {
         forza = forza ? forza + "; " + forzaExtra : forzaExtra;
       }
 
-      var debolezza = "";
+      let debolezza = "";
       if (debolezzaSelect.value) {
-        const dOpt = debolezzaSelect.options[debolezzaSelect.selectedIndex].text;
-        debolezza = dOpt;
+        debolezza = debolezzaSelect.options[debolezzaSelect.selectedIndex].text;
       }
       const debolezzaExtra = debolezzaExtraInput.value.trim();
       if (debolezzaExtra) {
@@ -373,18 +782,11 @@
         return;
       }
       if (!tipologia) {
-        alert("Seleziona la tipologia di bisogno.");
+        alert("Seleziona la tipologia di bisogno relazionale/sociale.");
         return;
       }
 
-      const obiettivi = costruisciObiettivi(
-        ordineCod,
-        materia,
-        tipologia,
-        forza,
-        debolezza
-      );
-
+      const obiettivi = costruisciObiettivi(ordineCod, tipologia, forza, debolezza);
       goals.length = 0;
       obiettivi.forEach(function(g) {
         goals.push(g);
@@ -403,13 +805,8 @@
         ? ordineSelect.options[ordineSelect.selectedIndex].text
         : "-";
       const ordineNote = ordineNoteInput.value || "";
-      const materia = materiaInput.value || "-";
-      const tipologia =
-        tipologiaSelect.value
-          ? tipologiaSelect.options[tipologiaSelect.selectedIndex].text
-          : "-";
 
-      var forza = "";
+      let forza = "";
       if (forzaSelect.value) {
         forza = forzaSelect.options[forzaSelect.selectedIndex].text;
       }
@@ -419,7 +816,7 @@
       }
       if (!forza) forza = "-";
 
-      var debolezza = "";
+      let debolezza = "";
       if (debolezzaSelect.value) {
         debolezza = debolezzaSelect.options[debolezzaSelect.selectedIndex].text;
       }
@@ -429,20 +826,24 @@
       }
       if (!debolezza) debolezza = "-";
 
-      var testo = "";
+      const tipologiaText =
+        tipologiaSelect.value
+          ? tipologiaSelect.options[tipologiaSelect.selectedIndex].text
+          : "-";
+
+      let testo = "";
       testo += "CONTESTO\n";
-      testo += "Ordine e grado scolastico: " + ordineLabel;
+      testo += "Ordine e grado scolastico: " + (ordineLabel || "-");
       if (ordineNote) testo += " – " + ordineNote;
       testo += "\n";
-      testo += "Materia / ambito: " + materia + "\n";
-      testo += "Tipologia di bisogno: " + tipologia + "\n\n";
+      testo += "Tipologia di bisogno relazionale/sociale: " + tipologiaText + "\n\n";
 
-      testo += "PUNTI DI FORZA\n" + forza + "\n\n";
-      testo += "PUNTI DI DEBOLEZZA / BISOGNI\n" + debolezza + "\n\n";
+      testo += "PUNTI DI FORZA RELAZIONALI\n" + forza + "\n\n";
+      testo += "PUNTI DI DEBOLEZZA / BISOGNI RELAZIONALI\n" + debolezza + "\n\n";
       testo += "OBIETTIVI FORMULATI SECONDO IL MODELLO +STIMA\n\n";
 
       goals.forEach(function(g, i) {
-        testo += "OBIETTIVO " + (i + 1) + ": " + g.titolo + "\n";
+        testo += g.titolo + "\n";
         testo += g.descrizione + "\n";
         testo += "----------------------------------------\n\n";
       });
