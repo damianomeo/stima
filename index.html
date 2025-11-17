@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Goal Setting – Modello +STIMA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind via CDN per uno stile pulito -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <div class="max-w-5xl mx-auto p-6 space-y-6">
+    <h1 class="text-3xl font-bold text-center mb-2">
+      Goal Setting – Modello +STIMA
+    </h1>
+    <p class="text-center text-sm text-gray-700">
+      Inserisci i dati del contesto: il sistema proporrà automaticamente obiettivi in forma positiva, specifica,
+      temporizzata e misurabile, a partire dai punti di forza e di debolezza.
+    </p>
+
+    <!-- SEZIONE: FORM DATI -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white shadow rounded-2xl p-5 space-y-4">
+        <h2 class="text-xl font-semibold">Dati del contesto</h2>
+
+        <input
+          id="ordine"
+          class="w-full p-3 rounded-xl border"
+          placeholder="Ordine e grado scolastico (es. Scuola dell’infanzia, Scuola primaria classe 3ª...)"
+        />
+
+        <input
+          id="materia"
+          class="w-full p-3 rounded-xl border"
+          placeholder="Materia / ambito (es. Italiano, Matematica, Comportamento, Autonomia...)"
+        />
+
+        <div class="space-y-1">
+          <label for="tipologiaBisogno" class="text-sm font-medium">
+            Tipologia di bisogno (seleziona quella prevalente)
+          </label>
+          <select
+            id="tipologiaBisogno"
+            class="w-full p-3 rounded-xl border text-sm"
+          >
+            <option value="">— Seleziona un’opzione —</option>
+            <option value="lettura_scrittura">Difficoltà di lettura / scrittura</option>
+            <option value="matematica_calcolo">Difficoltà in matematica / calcolo</option>
+            <option value="attenzione_concentrazione">Attenzione / concentrazione</option>
+            <option value="comportamento_relazione">Regolazione comportamentale / relazione</option>
+            <option value="comprensione_testo_linguaggio">Comprensione del testo / linguaggio</option>
+            <option value="organizzazione_metodo">Organizzazione / metodo di studio</option>
+            <option value="altro">Altro / bisogno non specificato</option>
+          </select>
+        </div>
+
+        <textarea
+          id="puntiForza"
+          class="w-full p-3 rounded-xl border min-h-[80px]"
+          placeholder="Punti di forza dell’alunno (es. buona motivazione, curiosità, interesse per la lettura, abilità sociali...)"
+        ></textarea>
+
+        <textarea
+          id="puntiDebolezza"
+          class="w-full p-3 rounded-xl border min-h-[80px]"
+          placeholder="Punti di debolezza / bisogni (es. difficoltà nella lettura ad alta voce, fatica a mantenere l’attenzione, tende a parlare a voce alta...)"
+        ></textarea>
+
+        <button
+          id="generateGoalsBtn"
+          class="w-full p-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700"
+        >
+          Genera obiettivi automatici (+STIMA)
+        </button>
+
+        <p class="text-xs text-gray-500">
+          Nota: gli obiettivi generati sono proposte automatiche da discutere in modo
+          intersoggettivo tra docenti, famiglia e alunno.
+        </p>
+      </div>
+
+      <!-- SEZIONE: OBIETTIVI GENERATI -->
+      <div class="bg-white shadow rounded-2xl p-5">
+        <h2 class="text-xl font-semibold mb-3">Obiettivi suggeriti</h2>
+        <div id="goalsContainer" class="space-y-4">
+          <p class="text-gray-600" id="noGoalsMsg">
+            Nessun obiettivo generato. Inserisci i dati e clicca “Genera obiettivi automatici”.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEZIONE: LINEE GUIDA +STIMA -->
+    <div class="bg-white shadow rounded-2xl p-6">
+      <h2 class="text-2xl font-semibold mb-4">Linee guida del modello +STIMA</h2>
+      <ul class="list-disc pl-6 space-y-2 text-sm md:text-base">
+        <li>
+          <strong>Positività degli item:</strong>
+          formulare ciò che l’alunno è chiamato a fare (es. “parlare a bassa voce durante i lavori in gruppo”)
+          invece di ciò che deve evitare (es. “non urlare”).
+        </li>
+        <li>
+          <strong>Intersoggettività:</strong>
+          le mete vanno negoziate e condivise fra tutti gli attori (docenti, famiglia, alunno),
+          costruendo alleanze pedagogiche e visioni comuni.
+        </li>
+        <li>
+          <strong>Univocità:</strong>
+          obiettivi circoscritti, chiari e verificabili (es. “riprodurre su carta millimetrata un quadrato
+          tramite il righello”, e non consegne generiche come “riprodurre figure geometriche”).
+        </li>
+        <li>
+          <strong>Specificità:</strong>
+          definire materiali, luoghi, tempi, approcci e strumenti (ad es. audio-lettura con auricolari,
+          software dedicati, setting protetto).
+        </li>
+        <li>
+          <strong>Temporaneità:</strong>
+          indicare un orizzonte realistico per il monitoraggio (es. entro 4 settimane, entro il primo
+          quadrimestre).
+        </li>
+        <li>
+          <strong>Misurabilità (I+1):</strong>
+          ancorare il traguardo ad indicatori osservabili (es. numero di errori, volte su 5, minuti di
+          attenzione mantenuta), leggermente oltre il livello attuale.
+        </li>
+        <li>
+          <strong>Attuabilità:</strong>
+          obiettivi proporzionati ai punti di forza e alle fragilità, alle risorse del contesto e dei docenti.
+        </li>
+      </ul>
+    </div>
+
+    <!-- SEZIONE: ESPORTAZIONE TESTO -->
+    <div class="bg-white shadow rounded-2xl p-6 space-y-3">
+      <h2 class="text-xl font-semibold">Esportazione per Word / PDF</h2>
+      <p class="text-sm md:text-base">
+        1) Clicca su “Genera testo per Word” per creare una sintesi degli obiettivi. <br />
+        2) Copia e incolla il testo in un documento Word. <br />
+        3) Se vuoi un PDF, usa “Salva come PDF” da Word, oppure “Stampa &gt; Salva come PDF” dal browser.
+      </p>
+      <button
+        id="exportTextBtn"
+        class="p-3 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700"
+      >
+        Genera testo per Word
+      </button>
+      <textarea
+        id="exportText"
+        class="w-full mt-3 p-3 rounded-xl border min-h-[140px]"
+        placeholder="Qui comparirà il testo degli obiettivi, pronto per essere copiato in Word."
+      ></textarea>
+    </div>
+  </div>
+
+  <script>
+    const goals = [];
+
+    const ordineInput = document.getElementById("ordine");
+    const materiaInput = document.getElementById("materia");
+    const tipologiaSelect = document.getElementById("tipologiaBisogno");
+    const puntiForzaInput = document.getElementById("puntiForza");
+    const puntiDebolezzaInput = document.getElementById("puntiDebolezza");
+
+    const generateGoalsBtn = document.getElementById("generateGoalsBtn");
+    const goalsContainer = document.getElementById("goalsContainer");
+    const noGoalsMsg = document.getElementById("noGoalsMsg");
+    const exportTextBtn = document.getElementById("exportTextBtn");
+    const exportTextArea = document.getElementById("exportText");
+
+    function pulisciTesto(t) {
+      return (t || "").toLowerCase();
+    }
+
+    function buildGoalsFromData(ordine, materia, forza, debolezza, tipologia) {
+      const textDeb = pulisciTesto(debolezza);
+      const textMat = pulisciTesto(materia);
+      const textOrd = pulisciTesto(ordine);
+      const textTipo = pulisciTesto(tipologia || "");
+      const risultati = [];
+
+      // individuazione del livello scolastico
+      const isInfanzia = /infanzia/.test(textOrd);
+      const isPrimaria = /primaria/.test(textOrd);
+      const isSec1 =
+        /secondaria di i|secondaria di 1|medie/.test(textOrd);
+      const isSec2 =
+        /secondaria di ii|secondaria di 2|superior/.test(textOrd);
+
+      let settingDescr = "in classe";
+      if (isInfanzia) settingDescr = "nel piccolo gruppo in sezione";
+      else if (isPrimaria) settingDescr = "in classe durante le lezioni";
+      else if (isSec1 || isSec2) settingDescr = "durante le lezioni disciplinari";
+
+      const contestoBase = ordine || "classe";
+      const materiaLabel = materia || "ambito di lavoro";
+
+      const forzaShort = forza
+        ? forza.length > 120
+          ? forza.slice(0, 117) + "..."
+          : forza
+        : "i punti di forza individuati";
+
+      function addGoal(titolo, descrizione) {
+        risultati.push({ titolo, descrizione });
+      }
+
+      // --- REGOLE BASATE SU KEYWORD + TIPOLOGIA ---
+
+      const needLettScr =
+        textTipo.includes("lettura") ||
+        textTipo.includes("scrittura") ||
+        /lettur|legge|decodifica|brano|testo ad alta voce|scrittura|ortograf/.test(
+          textDeb
+        ) ||
+        /italiano/.test(textMat);
+
+      const needMath =
+        textTipo.includes("matematica") ||
+        textTipo.includes("calcolo") ||
+        /calcolo|tabelline|operazioni|addizion|sottrazion|moltiplicazion|division/.test(
+          textDeb
+        ) ||
+        /matematica/.test(textMat);
+
+      const needAttenzione =
+        textTipo.includes("attenzione") ||
+        /attenzion|concentraz|si distrae|distrazion/.test(textDeb);
+
+      const needComportamento =
+        textTipo.includes("comportamento") ||
+        textTipo.includes("relazione") ||
+        /comportament|regole|impulsiv|aggressiv|urla|urlare|relazion|social|interazione/.test(
+          textDeb
+        );
+
+      const needComprensione =
+        textTipo.includes("comprensione") ||
+        textTipo.includes("linguaggio") ||
+        /comprension|capire il testo|domande sul testo|linguaggio/.test(textDeb);
+
+      const needOrganizzazione =
+        textTipo.includes("organizzazione") ||
+        textTipo.includes("metodo") ||
+        /organizzazion|metodo di studio|pianificazion|materiale/.test(textDeb);
+
+      // LETTURA / SCRITTURA
+      if (needLettScr) {
+        let descr;
+        if (isInfanzia) {
+          descr = `Entro 6 settimane, ${settingDescr}, l’alunno parteciperà ad attività di ascolto, ripetizione e anticipazione di brevi frasi, filastrocche o storie, riproducendo correttamente almeno 4 enunciati su 5 in 4 situazioni su 5, valorizzando ${forzaShort}.`;
+        } else if (isPrimaria) {
+          descr = `Entro 6 settimane, durante le attività di ${materiaLabel} ${settingDescr}, l’alunno leggerà ad alta voce brani di 3–5 righe con non più di 3 errori di decodifica in almeno 4 occasioni su 5, valorizzando ${forzaShort}.`;
+        } else {
+          descr = `Entro 6 settimane, durante le attività di ${materiaLabel} ${settingDescr}, l’alunno leggerà ad alta voce brani di 5–8 righe con non più di 3 errori di decodifica in almeno 4 occasioni su 5, valorizzando ${forzaShort}.`;
+        }
+        addGoal("Miglioramento della lettura / competenze prelettura", descr);
+
+        // parte scrittura/ortografia per primaria/secondaria
+        if (!isInfanzia) {
+          addGoal(
+            "Accuratezza nella produzione scritta",
+            `Entro il termine del trimestre, nelle attività di ${materiaLabel} ${settingDescr}, l’alunno produrrà testi brevi (5–8 frasi) con massimo 3 errori ortografici per testo in almeno 3 prove su 4, utilizzando schemi guida e rilettura ad alta voce.`
+          );
+        }
+      }
+
+      // MATEMATICA / CALCOLO (con versione infanzia sui prerequisiti logico-matematici)
+      if (needMath) {
+        if (isInfanzia) {
+          addGoal(
+            "Sviluppo dei prerequisiti logico-matematici",
+            `Entro 8 settimane, ${settingDescr}, l’alunno riconoscerà e conterà correttamente insiemi di oggetti fino a 5/10 elementi in almeno 4 situazioni su 5, utilizzando giochi di conteggio, materiali concreti e routine di sezione.`
+          );
+        } else {
+          addGoal(
+            "Automatizzazione del calcolo di base",
+            `Entro 8 settimane, durante le lezioni di ${materiaLabel} in ${contestoBase}, l’alunno risolverà correttamente almeno 8 operazioni su 10 del tipo indicato (es. addizioni e sottrazioni entro il 100) in 4 verifiche consecutive, utilizzando schede strutturate e tempo aggiuntivo se necessario.`
+          );
+        }
+      }
+
+      // ATTENZIONE / CONCENTRAZIONE (con versione infanzia)
+      if (needAttenzione) {
+        if (isInfanzia) {
+          addGoal(
+            "Mantenimento dell’attenzione durante le routine",
+            `Entro 6 settimane, durante circle time e attività guidate ${settingDescr}, l’alunno rimarrà seduto e partecipe per almeno 5–7 minuti consecutivi, con al massimo un richiamo verbale lieve dell’adulto, in 4 routine su 5, supportato da canzoni di apertura/chiusura, agenda visiva e segnali condivisi.`
+          );
+        } else {
+          addGoal(
+            "Mantenimento dell’attenzione sul compito",
+            `Entro 6 settimane, ${settingDescr}, l’alunno manterrà l’attenzione sul compito per almeno 10 minuti consecutivi, con al massimo un richiamo verbale lieve dell’adulto, in 4 lezioni su 5, supportato da strumenti visivi (timer, agenda visiva, indicazioni passo-passo).`
+          );
+        }
+      }
+
+      // COMPORTAMENTO / RELAZIONE (con versione infanzia)
+      if (needComportamento) {
+        let descrComport;
+        if (isInfanzia) {
+          descrComport = `Entro 8 settimane, durante i momenti di gioco strutturato e circle time ${settingDescr}, l’alunno rispetterà i turni di parola, utilizzerà un tono di voce adeguato e condividerà almeno un gioco o materiale con i pari in 4 attività su 5, sostenuto da regole condivise visive, modellamento adulto e rinforzi positivi.`;
+        } else {
+          descrComport = `Entro 8 settimane, durante i lavori di gruppo in ${contestoBase}, l’alunno interverrà rispettando il turno di parola e mantenendo un tono di voce adeguato in almeno 4 attività su 5, con l’aiuto di regole condivise visive e rinforzi positivi concordati nel team educativo.`;
+        }
+        addGoal(
+          "Regolazione del comportamento in situazione di gruppo",
+          descrComport
+        );
+      }
+
+      // COMPRENSIONE DEL TESTO / LINGUAGGIO
+      if (needComprensione) {
+        if (isInfanzia) {
+          addGoal(
+            "Comprensione di storie e istruzioni semplici",
+            `Entro il termine del trimestre, durante la lettura ad alta voce o la narrazione di brevi storie ${settingDescr}, l’alunno sarà in grado di rispondere correttamente ad almeno 3 domande su 4 (chi? cosa fa? dove?) in 4 situazioni su 5, anche con supporto di immagini o oggetti.`
+          );
+        } else {
+          addGoal(
+            "Comprensione del testo scritto",
+            `Entro il termine del quadrimestre, in ${materiaLabel}, l’alunno risponderà correttamente ad almeno 4 domande su 5 relative a un breve testo narrativo o informativo letto (con o senza audio-lettura), utilizzando mappe o immagini di supporto.`
+          );
+        }
+      }
+
+      // ORGANIZZAZIONE / METODO (con versione infanzia)
+      if (needOrganizzazione) {
+        if (isInfanzia) {
+          addGoal(
+            "Organizzazione nelle routine di sezione",
+            `Entro 6 settimane, all’inizio e alla fine delle attività ${settingDescr}, l’alunno riporrà il proprio materiale (es. grembiule, zainetto, giochi) nel posto assegnato in almeno 4 giorni su 5, con il supporto di etichette visive e modellamento da parte dell’adulto.`
+          );
+        } else {
+          addGoal(
+            "Organizzazione del materiale e del lavoro",
+            `Entro 6 settimane, all’inizio delle lezioni in ${contestoBase}, l’alunno preparerà autonomamente il materiale necessario (quaderni, libro, astuccio) e compilerà una breve lista di cose da fare in almeno 4 giorni su 5, utilizzando una check-list visiva predisposta dal team docente.`
+          );
+        }
+      }
+
+      // SE NESSUNA REGOLA SPECIFICA SCATTA → OBIETTIVO GENERICO MA +STIMA
+      if (risultati.length === 0) {
+        let descrGenerico;
+        if (isInfanzia) {
+          descrGenerico = `Entro 6–8 settimane, durante le attività guidate ${settingDescr}, l’alunno porterà a termine una semplice sequenza di compiti (es. sedersi, ascoltare, svolgere un breve gioco strutturato, riporre il materiale) con massimo un supporto individualizzato dell’adulto in almeno 3 situazioni su 4, valorizzando ${forzaShort} e utilizzando routine visive e tempi di pausa concordati.`;
+        } else {
+          descrGenerico = `Entro 6–8 settimane, nelle attività di ${materiaLabel} in ${contestoBase}, l’alunno porterà a termine il compito assegnato con massimo un supporto individualizzato dell’adulto, in almeno 3 situazioni su 4, valorizzando ${forzaShort} e utilizzando strategie condivise (scomposizione in passi, agenda visiva, tempi di pausa concordati).`;
+        }
+        addGoal("Obiettivo di autonomia progressiva", descrGenerico);
+      }
+
+      return risultati;
+    }
+
+    function renderGoals() {
+      goalsContainer.innerHTML = "";
+      if (goals.length === 0) {
+        noGoalsMsg.style.display = "block";
+        goalsContainer.appendChild(noGoalsMsg);
+        return;
+      }
+      noGoalsMsg.style.display = "none";
+
+      goals.forEach((g, index) => {
+        const card = document.createElement("div");
+        card.className =
+          "border rounded-xl p-4 bg-gray-50 text-sm md:text-base space-y-1";
+
+        card.innerHTML = `
+          <p class="font-semibold">Obiettivo ${index + 1}: ${g.titolo}</p>
+          <p>${g.descrizione}</p>
+        `;
+
+        goalsContainer.appendChild(card);
+      });
+    }
+
+    generateGoalsBtn.addEventListener("click", () => {
+      const ordine = ordineInput.value.trim();
+      const materia = materiaInput.value.trim();
+      const tipologia = tipologiaSelect.value;
+      const forza = puntiForzaInput.value.trim();
+      const debolezza = puntiDebolezzaInput.value.trim();
+
+      if (!debolezza && !materia && !tipologia) {
+        alert(
+          "Inserisci almeno la materia, la tipologia di bisogno o qualche indicazione sui punti di debolezza/bisogni."
+        );
+        return;
+      }
+
+      const nuovi = buildGoalsFromData(ordine, materia, forza, debolezza, tipologia);
+      goals.length = 0;
+      nuovi.forEach((g) => goals.push(g));
+      renderGoals();
+    });
+
+    exportTextBtn.addEventListener("click", () => {
+      if (goals.length === 0) {
+        exportTextArea.value =
+          "Nessun obiettivo generato. Inserisci i dati e clicca su “Genera obiettivi automatici (+STIMA)”.";
+        return;
+      }
+
+      let testo = "";
+      testo += "CONTESTO\n";
+      testo += `Ordine e grado scolastico: ${ordineInput.value || "-"}\n`;
+      testo += `Materia / ambito: ${materiaInput.value || "-"}\n`;
+      testo += `Tipologia di bisogno: ${tipologiaSelect.options[tipologiaSelect.selectedIndex]?.text || "-"}\n\n`;
+      testo += "PUNTI DI FORZA\n";
+      testo += `${puntiForzaInput.value || "-"}\n\n`;
+      testo += "PUNTI DI DEBOLEZZA / BISOGNI\n";
+      testo += `${puntiDebolezzaInput.value || "-"}\n\n`;
+      testo += "OBIETTIVI FORMULATI SECONDO IL MODELLO +STIMA\n\n`;
+
+      goals.forEach((g, i) => {
+        testo += `OBIETTIVO ${i + 1}: ${g.titolo}\n`;
+        testo += `${g.descrizione}\n`;
+        testo += "----------------------------------------\n\n";
+      });
+
+      testo += "SPAZIO PER LA CONDIVISIONE INTERSOGGETTIVA\n";
+      testo += "Docente/i coinvolti: __________________________\n";
+      testo += "Famiglia (genitore/i o tutore/i): _____________\n";
+      testo += "Alunno/a: ____________________________________\n";
+      testo += "Data: ________________________________________\n";
+
+      exportTextArea.value = testo;
+    });
+
+    // render iniziale
+    renderGoals();
+  </script>
+</body>
+</html>
