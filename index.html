@@ -22,18 +22,35 @@
       <div class="bg-white shadow rounded-2xl p-5 space-y-4">
         <h2 class="text-xl font-semibold">Dati del contesto</h2>
 
-        <input
-          id="ordine"
-          class="w-full p-3 rounded-xl border"
-          placeholder="Ordine e grado scolastico (es. Scuola dell’infanzia, Scuola primaria classe 3ª...)"
-        />
+        <!-- Ordine e grado scolastico: ELENCO A TENDINA + nota -->
+        <div class="space-y-1">
+          <label class="text-sm font-medium">Ordine e grado scolastico</label>
+          <select
+            id="ordineSelect"
+            class="w-full p-3 rounded-xl border text-sm"
+          >
+            <option value="">— Seleziona l’ordine —</option>
+            <option value="Scuola dell’infanzia">Scuola dell’infanzia</option>
+            <option value="Scuola primaria">Scuola primaria</option>
+            <option value="Scuola secondaria di I grado">Scuola secondaria di I grado (medie)</option>
+            <option value="Scuola secondaria di II grado">Scuola secondaria di II grado (superiori)</option>
+            <option value="Altro contesto educativo">Altro contesto educativo</option>
+          </select>
+          <input
+            id="ordineNote"
+            class="w-full p-2 rounded-xl border text-xs"
+            placeholder="Classe / sezione / altre note (es. 3ªA, piccolo gruppo, laboratorio...)"
+          />
+        </div>
 
+        <!-- Materia / ambito -->
         <input
           id="materia"
           class="w-full p-3 rounded-xl border"
           placeholder="Materia / ambito (es. Italiano, Matematica, Comportamento, Autonomia...)"
         />
 
+        <!-- Tipologia di bisogno -->
         <div class="space-y-1">
           <label for="tipologiaBisogno" class="text-sm font-medium">
             Tipologia di bisogno (seleziona quella prevalente)
@@ -53,17 +70,53 @@
           </select>
         </div>
 
-        <textarea
-          id="puntiForza"
-          class="w-full p-3 rounded-xl border min-h-[80px]"
-          placeholder="Punti di forza dell’alunno (es. buona motivazione, curiosità, interesse per la lettura, abilità sociali...)"
-        ></textarea>
+        <!-- PUNTI DI FORZA: ELENCO A TENDINA + testo libero -->
+        <div class="space-y-1">
+          <label class="text-sm font-medium">Punti di forza (principale)</label>
+          <select
+            id="forzaSelect"
+            class="w-full p-3 rounded-xl border text-sm"
+          >
+            <option value="">— Seleziona un punto di forza —</option>
+            <option value="buona motivazione">Buona motivazione</option>
+            <option value="curiosità e interesse per l’apprendimento">Curiosità e interesse per l’apprendimento</option>
+            <option value="buone abilità sociali">Buone abilità sociali</option>
+            <option value="buona comprensione orale">Buona comprensione orale</option>
+            <option value="creatività e pensiero divergente">Creatività e pensiero divergente</option>
+            <option value="autonomia nelle routine">Autonomia nelle routine</option>
+            <option value="altro_punto_forza">Altro...</option>
+          </select>
+          <textarea
+            id="puntiForzaExtra"
+            class="w-full p-2 rounded-xl border text-xs min-h-[60px]"
+            placeholder="Altri punti di forza rilevanti (opzionale)..."
+          ></textarea>
+        </div>
 
-        <textarea
-          id="puntiDebolezza"
-          class="w-full p-3 rounded-xl border min-h-[80px]"
-          placeholder="Punti di debolezza / bisogni (es. difficoltà nella lettura ad alta voce, fatica a mantenere l’attenzione, tende a parlare a voce alta...)"
-        ></textarea>
+        <!-- PUNTI DI DEBOLEZZA: ELENCO A TENDINA + testo libero -->
+        <div class="space-y-1">
+          <label class="text-sm font-medium">Punti di debolezza / bisogni (principale)</label>
+          <select
+            id="debolezzaSelect"
+            class="w-full p-3 rounded-xl border text-sm"
+          >
+            <option value="">— Seleziona un bisogno prevalente —</option>
+            <option value="difficoltà di lettura ad alta voce">Difficoltà di lettura ad alta voce</option>
+            <option value="difficoltà di comprensione del testo">Difficoltà di comprensione del testo</option>
+            <option value="difficoltà di scrittura / ortografia">Difficoltà di scrittura / ortografia</option>
+            <option value="difficoltà di calcolo / tabelline">Difficoltà di calcolo / tabelline</option>
+            <option value="fatica a mantenere l’attenzione">Fatica a mantenere l’attenzione</option>
+            <option value="tende a parlare a voce alta / interrompere">Tende a parlare a voce alta / interrompere</option>
+            <option value="difficoltà nelle relazioni con i pari">Difficoltà nelle relazioni con i pari</option>
+            <option value="difficoltà a organizzare materiale e compiti">Difficoltà a organizzare materiale e compiti</option>
+            <option value="altro_bisogno">Altro...</option>
+          </select>
+          <textarea
+            id="puntiDebolezzaExtra"
+            class="w-full p-2 rounded-xl border text-xs min-h-[60px]"
+            placeholder="Descrivi meglio i bisogni (esempi concreti, situazioni tipiche)..."
+          ></textarea>
+        </div>
 
         <button
           id="generateGoalsBtn"
@@ -105,27 +158,23 @@
         </li>
         <li>
           <strong>Univocità:</strong>
-          obiettivi circoscritti, chiari e verificabili (es. “riprodurre su carta millimetrata un quadrato
-          tramite il righello”, e non consegne generiche come “riprodurre figure geometriche”).
+          obiettivi circoscritti, chiari e verificabili.
         </li>
         <li>
           <strong>Specificità:</strong>
-          definire materiali, luoghi, tempi, approcci e strumenti (ad es. audio-lettura con auricolari,
-          software dedicati, setting protetto).
+          definire materiali, luoghi, tempi, approcci e strumenti.
         </li>
         <li>
           <strong>Temporaneità:</strong>
-          indicare un orizzonte realistico per il monitoraggio (es. entro 4 settimane, entro il primo
-          quadrimestre).
+          indicare un orizzonte realistico per il monitoraggio.
         </li>
         <li>
           <strong>Misurabilità (I+1):</strong>
-          ancorare il traguardo ad indicatori osservabili (es. numero di errori, volte su 5, minuti di
-          attenzione mantenuta), leggermente oltre il livello attuale.
+          ancorare il traguardo ad indicatori osservabili, leggermente oltre il livello attuale.
         </li>
         <li>
           <strong>Attuabilità:</strong>
-          obiettivi proporzionati ai punti di forza e alle fragilità, alle risorse del contesto e dei docenti.
+          obiettivi proporzionati alle risorse e alle fragilità.
         </li>
       </ul>
     </div>
@@ -155,11 +204,14 @@
   <script>
     const goals = [];
 
-    const ordineInput = document.getElementById("ordine");
+    const ordineSelect = document.getElementById("ordineSelect");
+    const ordineNoteInput = document.getElementById("ordineNote");
     const materiaInput = document.getElementById("materia");
     const tipologiaSelect = document.getElementById("tipologiaBisogno");
-    const puntiForzaInput = document.getElementById("puntiForza");
-    const puntiDebolezzaInput = document.getElementById("puntiDebolezza");
+    const forzaSelect = document.getElementById("forzaSelect");
+    const forzaExtraInput = document.getElementById("puntiForzaExtra");
+    const debolezzaSelect = document.getElementById("debolezzaSelect");
+    const debolezzaExtraInput = document.getElementById("puntiDebolezzaExtra");
 
     const generateGoalsBtn = document.getElementById("generateGoalsBtn");
     const goalsContainer = document.getElementById("goalsContainer");
@@ -204,43 +256,38 @@
         risultati.push({ titolo, descrizione });
       }
 
-      // --- REGOLE BASATE SU KEYWORD + TIPOLOGIA ---
+      // --- REGOLE BASATE SU TIPOLOGIA E TESTO ---
 
       const needLettScr =
-        textTipo.includes("lettura") ||
-        textTipo.includes("scrittura") ||
+        textTipo.includes("lettura_scrittura") ||
         /lettur|legge|decodifica|brano|testo ad alta voce|scrittura|ortograf/.test(
           textDeb
         ) ||
         /italiano/.test(textMat);
 
       const needMath =
-        textTipo.includes("matematica") ||
-        textTipo.includes("calcolo") ||
+        textTipo.includes("matematica_calcolo") ||
         /calcolo|tabelline|operazioni|addizion|sottrazion|moltiplicazion|division/.test(
           textDeb
         ) ||
         /matematica/.test(textMat);
 
       const needAttenzione =
-        textTipo.includes("attenzione") ||
+        textTipo.includes("attenzione_concentrazione") ||
         /attenzion|concentraz|si distrae|distrazion/.test(textDeb);
 
       const needComportamento =
-        textTipo.includes("comportamento") ||
-        textTipo.includes("relazione") ||
+        textTipo.includes("comportamento_relazione") ||
         /comportament|regole|impulsiv|aggressiv|urla|urlare|relazion|social|interazione/.test(
           textDeb
         );
 
       const needComprensione =
-        textTipo.includes("comprensione") ||
-        textTipo.includes("linguaggio") ||
+        textTipo.includes("comprensione_testo_linguaggio") ||
         /comprension|capire il testo|domande sul testo|linguaggio/.test(textDeb);
 
       const needOrganizzazione =
-        textTipo.includes("organizzazione") ||
-        textTipo.includes("metodo") ||
+        textTipo.includes("organizzazione_metodo") ||
         /organizzazion|metodo di studio|pianificazion|materiale/.test(textDeb);
 
       // LETTURA / SCRITTURA
@@ -255,7 +302,6 @@
         }
         addGoal("Miglioramento della lettura / competenze prelettura", descr);
 
-        // parte scrittura/ortografia per primaria/secondaria
         if (!isInfanzia) {
           addGoal(
             "Accuratezza nella produzione scritta",
@@ -264,7 +310,7 @@
         }
       }
 
-      // MATEMATICA / CALCOLO (con versione infanzia sui prerequisiti logico-matematici)
+      // MATEMATICA / CALCOLO
       if (needMath) {
         if (isInfanzia) {
           addGoal(
@@ -279,7 +325,7 @@
         }
       }
 
-      // ATTENZIONE / CONCENTRAZIONE (con versione infanzia)
+      // ATTENZIONE / CONCENTRAZIONE
       if (needAttenzione) {
         if (isInfanzia) {
           addGoal(
@@ -294,7 +340,7 @@
         }
       }
 
-      // COMPORTAMENTO / RELAZIONE (con versione infanzia)
+      // COMPORTAMENTO / RELAZIONE
       if (needComportamento) {
         let descrComport;
         if (isInfanzia) {
@@ -308,7 +354,7 @@
         );
       }
 
-      // COMPRENSIONE DEL TESTO / LINGUAGGIO
+      // COMPRENSIONE / LINGUAGGIO
       if (needComprensione) {
         if (isInfanzia) {
           addGoal(
@@ -323,7 +369,7 @@
         }
       }
 
-      // ORGANIZZAZIONE / METODO (con versione infanzia)
+      // ORGANIZZAZIONE / METODO
       if (needOrganizzazione) {
         if (isInfanzia) {
           addGoal(
@@ -338,7 +384,7 @@
         }
       }
 
-      // SE NESSUNA REGOLA SPECIFICA SCATTA → OBIETTIVO GENERICO MA +STIMA
+      // SE NESSUNA REGOLA SCATTA → OBIETTIVO GENERICO +STIMA
       if (risultati.length === 0) {
         let descrGenerico;
         if (isInfanzia) {
@@ -376,20 +422,52 @@
     }
 
     generateGoalsBtn.addEventListener("click", () => {
-      const ordine = ordineInput.value.trim();
+      const ordineBase = ordineSelect.value;
+      const ordineNote = ordineNoteInput.value.trim();
+      const ordine =
+        ordineNote && ordineBase
+          ? ordineBase + " – " + ordineNote
+          : ordineBase || ordineNote || "";
+
       const materia = materiaInput.value.trim();
       const tipologia = tipologiaSelect.value;
-      const forza = puntiForzaInput.value.trim();
-      const debolezza = puntiDebolezzaInput.value.trim();
 
-      if (!debolezza && !materia && !tipologia) {
+      // Costruzione testo punti di forza
+      let forzaText = "";
+      if (forzaSelect.value) {
+        const opt = forzaSelect.options[forzaSelect.selectedIndex];
+        forzaText = opt.text;
+      }
+      const forzaExtra = forzaExtraInput.value.trim();
+      if (forzaExtra) {
+        forzaText += (forzaText ? "; " : "") + forzaExtra;
+      }
+
+      // Costruzione testo punti di debolezza
+      let debolezzaText = "";
+      if (debolezzaSelect.value) {
+        const opt2 = debolezzaSelect.options[debolezzaSelect.selectedIndex];
+        debolezzaText = opt2.text;
+      }
+      const debolezzaExtra = debolezzaExtraInput.value.trim();
+      if (debolezzaExtra) {
+        debolezzaText += (debolezzaText ? "; " : "") + debolezzaExtra;
+      }
+
+      if (!debolezzaText && !materia && !tipologia) {
         alert(
-          "Inserisci almeno la materia, la tipologia di bisogno o qualche indicazione sui punti di debolezza/bisogni."
+          "Inserisci almeno: ordine scolastico, tipologia di bisogno e una descrizione dei punti di debolezza."
         );
         return;
       }
 
-      const nuovi = buildGoalsFromData(ordine, materia, forza, debolezza, tipologia);
+      const nuovi = buildGoalsFromData(
+        ordine,
+        materia,
+        forzaText,
+        debolezzaText,
+        tipologia
+      );
       goals.length = 0;
       nuovi.forEach((g) => goals.push(g));
       renderGoals();
@@ -402,15 +480,46 @@
         return;
       }
 
+      // Ricostruisco testo punti di forza/debolezza per la scheda
+      let forzaText = "";
+      if (forzaSelect.value) {
+        const opt = forzaSelect.options[forzaSelect.selectedIndex];
+        forzaText = opt.text;
+      }
+      const forzaExtra = forzaExtraInput.value.trim();
+      if (forzaExtra) {
+        forzaText += (forzaText ? "; " : "") + forzaExtra;
+      }
+      if (!forzaText) forzaText = "-";
+
+      let debolezzaText = "";
+      if (debolezzaSelect.value) {
+        const opt2 = debolezzaSelect.options[debolezzaSelect.selectedIndex];
+        debolezzaText = opt2.text;
+      }
+      const debolezzaExtra = debolezzaExtraInput.value.trim();
+      if (debolezzaExtra) {
+        debolezzaText += (debolezzaText ? "; " : "") + debolezzaExtra;
+      }
+      if (!debolezzaText) debolezzaText = "-";
+
+      const tipologiaText =
+        tipologiaSelect.value
+          ? tipologiaSelect.options[tipologiaSelect.selectedIndex].text
+          : "-";
+
       let testo = "";
       testo += "CONTESTO\n";
-      testo += `Ordine e grado scolastico: ${ordineInput.value || "-"}\n`;
+      testo += `Ordine e grado scolastico: ${
+        ordineSelect.value || "-"
+      } ${ordineNoteInput.value ? " – " + ordineNoteInput.value : ""}\n`;
       testo += `Materia / ambito: ${materiaInput.value || "-"}\n`;
-      testo += `Tipologia di bisogno: ${tipologiaSelect.options[tipologiaSelect.selectedIndex]?.text || "-"}\n\n`;
+      testo += `Tipologia di bisogno: ${tipologiaText}\n\n`;
+
       testo += "PUNTI DI FORZA\n";
-      testo += `${puntiForzaInput.value || "-"}\n\n`;
+      testo += `${forzaText}\n\n`;
       testo += "PUNTI DI DEBOLEZZA / BISOGNI\n";
-      testo += `${puntiDebolezzaInput.value || "-"}\n\n`;
+      testo += `${debolezzaText}\n\n`;
       testo += "OBIETTIVI FORMULATI SECONDO IL MODELLO +STIMA\n\n`;
 
       goals.forEach((g, i) => {
